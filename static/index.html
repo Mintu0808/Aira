@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mintu Chat</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">✦</span><span>Mint chat</span></div>
+        <button id="new-chat" class="new-chat" type="button"><span>＋</span> New conversation</button>
+        <div class="sidebar-note">
+          <span class="status-dot"></span>
+          <div><strong>Groq assistant</strong><small>Ready when you are</small></div>
+        </div>
+        <p class="sidebar-footer">Your conversations stay in this session.</p>
+      </aside>
+
+      <section class="chat-panel">
+        <header class="chat-header">
+          <div><p class="eyebrow">PERSONAL ASSISTANT</p><h1>Ask anything.</h1></div>
+          <span class="online"><i></i> Online</span>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="welcome-message">
+            <div class="welcome-icon">✦</div>
+            <h2>What’s on your mind?</h2>
+            <p>Ask a question, explore an idea, or get help with your next task.</p>
+            <div class="suggestions">
+              <button type="button" data-prompt="Explain LangGraph in simple terms">Explain LangGraph simply</button>
+              <button type="button" data-prompt="Help me plan my day">Help me plan my day</button>
+              <button type="button" data-prompt="Give me a creative writing idea">Give me a writing idea</button>
+            </div>
+          </div>
+        </div>
+
+        <form id="chat-form" class="composer">
+          <textarea id="message-input" rows="1" placeholder="Message Mint Chat…" aria-label="Message" required></textarea>
+          <button id="send-button" type="submit" aria-label="Send message" title="Send message">↑</button>
+          <p>Enter to send · Shift + Enter for a new line</p>
+        </form>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
