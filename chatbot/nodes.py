@@ -4,6 +4,7 @@ from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage
 from .database import get_long_term_memories, save_new_memories
 from .state import AgentConfiguredState, MemoryExtractorSchema
+from .database import log_message_to_db
 
 load_dotenv()
 
@@ -24,6 +25,9 @@ def chatbot_node(state: AgentConfiguredState):
     
     full_messages = [system_prompt] + state["messages"]
     response = model.invoke(full_messages)
+
+     # 🛠️ Log the newly generated AI response to the readable table
+    log_message_to_db(state["thread_id"], state["user_id"], "assistant", response.content)
     return {"messages": [response]}
 
 def memory_extractor_node(state: AgentConfiguredState):

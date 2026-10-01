@@ -11,3 +11,4 @@ class MemoryExtractorSchema(BaseModel):
 
 class AgentConfiguredState(MessagesState):
     user_id: str
+    thread_id: str

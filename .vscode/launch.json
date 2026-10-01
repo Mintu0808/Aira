@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Mint Chat (Uvicorn)",
+            "name": "Aira (Uvicorn)",
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",

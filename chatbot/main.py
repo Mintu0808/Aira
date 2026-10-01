@@ -27,6 +27,6 @@ async def lifespan(app: FastAPI):
 		pool.close()
 
 
-app = FastAPI(title="Mint Chat", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="Aira", version="1.0.0", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 app.include_router(router)

@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mintu Chat</title>
+    <title>Aira</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <main class="shell">
       <aside class="sidebar">
-        <div class="brand"><span class="brand-mark">✦</span><span>Mint chat</span></div>
+        <div class="brand"><span class="brand-mark">✦</span><span>Aira</span></div>
         <button id="new-chat" class="new-chat" type="button"><span>＋</span> New conversation</button>
+        <section class="conversation-history" aria-labelledby="history-heading">
+          <h2 id="history-heading">Recent conversations</h2>
+          <div id="conversation-list" class="conversation-list" aria-live="polite">
+            <p class="history-empty">Loading conversations…</p>
+          </div>
+        </section>
         <div class="sidebar-note">
           <span class="status-dot"></span>
-          <div><strong>Groq assistant</strong><small>Ready when you are</small></div>
-        </div>
-        <p class="sidebar-footer">Your conversations stay in this session.</p>
+          <div><strong>Aira assistant</strong><small>Ready when you are</small></div>
+        </div>  
+        <p class="sidebar-footer">History is saved for this browser.</p>
       </aside>
 
       <section class="chat-panel">
@@ -38,7 +44,7 @@
         </div>
 
         <form id="chat-form" class="composer">
-          <textarea id="message-input" rows="1" placeholder="Message Mint Chat…" aria-label="Message" required></textarea>
+          <textarea id="message-input" rows="1" placeholder="Message Aira…" aria-label="Message" required></textarea>
           <button id="send-button" type="submit" aria-label="Send message" title="Send message">↑</button>
           <p>Enter to send · Shift + Enter for a new line</p>
         </form>
